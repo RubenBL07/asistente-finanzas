@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: aegis-finance
+    runtime: docker
+    plan: free
+    region: frankfurt # Servidor en Europa para baja latencia en España
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: PORT
+        value: 10000
