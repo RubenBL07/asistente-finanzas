@@ -159,43 +159,46 @@ Esta es la pregunta más importante que debes hacerte hoy, antes de que ocurra:
         """
     },
     "nvidia_y_momento_actual": {
-        "title": "¿Qué ha pasado con Nvidia y la IA? ¿Es buen momento para meter dinero?",
-        "summary": "Diagnóstico sincero sobre Nvidia, valoración de la IA y por qué ya la compras de forma inteligente.",
+        "title": "¿Qué ha pasado con Nvidia y la IA? ¿Es buen momento para meter dinero tras caer un 25%?",
+        "summary": "Diagnóstico sincero sobre el desplome del 25%, la salida de Jensen Huang y si es momento de comprar rebajas o evitar el cuchillo cayendo.",
         "content": """
-### Diagnóstico Sincero: ¿Deberías meter dinero en Nvidia hoy?
+### Diagnóstico de Actualidad: Nvidia se desploma casi un 25%
 
-**Respuesta directa y honesta para Rubén (20 años): NO metas tus 10.000 € del banco de golpe en Nvidia.**
+**Respuesta directa y honesta para Rubén (20 años): NO metas tus 10.000 € del banco de golpe para cazar el rebote de Nvidia.**
 
-He aquí el análisis exhaustivo y sin filtros que ningún vendedor de cursos te va a dar:
-
----
-
-#### 1. Qué ha pasado realmente con Nvidia
-- **El superciclo de la IA**: Con el auge de los modelos de lenguaje y la inteligencia artificial generativa, Nvidia se convirtió en el monopolio casi absoluto del hardware de computación con sus chips Hopper (H100/H200) y su nueva arquitectura Blackwell (GB200).
-- **Cifras colosales**: Los grandes de Silicon Valley (Microsoft, Meta, Google, Amazon) han destinado más de 200.000 millones de dólares en gasto de capital (Capex) comprando chips de Nvidia. Esto llevó a Nvidia a márgenes del 60-70% y a superar los 3 billones de dólares de capitalización bursátil.
-- **La situación actual**: La acción ha multiplicado su valor de forma estratosférica y el mercado ahora le exige que cada trimestre no solo bata previsiones, sino que las pulverice para justificar el precio.
+He aquí el análisis de máxima actualidad y sin filtros:
 
 ---
 
-#### 2. La verdad sobre la valoración: La trampa de la perfección
-- Cotiza con múltiplos exigentes (PER futuro ~35-45x). Cuando compras a estos múltiplos, estás pagando por adelantado el éxito de los próximos 5 años.
-- Si en algún momento Microsoft o Meta anuncian que reducen su ritmo de gasto en servidores de IA, o si la competencia (Google TPUs, AMD Instinct) le roba un 5% de cuota, o si TSMC tiene problemas de fabricación, **la acción puede caer un 30% a 50% en pocas semanas**.
-- Recuerda que en 2022 Nvidia cayó un **66%**. Los inversores que compraron en la cresta de la ola sufrieron 18 meses de pánico.
+#### 1. Qué ha provocado la caída del 25% reciente
+- **Terremoto de liderazgo:** La abrupta dimisión de su histórico CEO y fundador Jensen Huang tras una investigación interna de la junta directiva (asumiendo Colette Kress como CEO interina) desató una oleada de pánico institucional por la pérdida del 'hombre clave' de la revolución de la IA.
+- **Digestión y deuda en Big Tech:** Los compradores de centros de datos (Microsoft, Meta, Google, Amazon) sufren el escrutinio de Wall Street por endeudarse masivamente sin demostrar aún una rentabilidad clara en aplicaciones cotidianas de IA.
+- **Límites energéticos:** Muchas instalaciones de centros de datos están topando con límites en la red eléctrica y cuellos de botella de refrigeración líquida.
 
 ---
 
-#### 3. El gran secreto que casi nadie te dice en España
-1. **Ya estás comprando Nvidia**: En cualquier fondo indexado como el **Vanguard Global (MSCI World)** o el **Vanguard S&P 500**, Nvidia ya es una de las 3 mayores posiciones, pesando aproximadamente entre el **4.5% y el 7%** del fondo total.
-2. **Cada mes que inviertes 250 €**, ya estás inyectando entre **15 € y 18 € directos a Nvidia**, junto con Apple, Microsoft, Amazon y Google, pero con el respaldo de 1.500 empresas más detrás.
-3. **Ventaja Fiscal Insuperable**: En España (Art. 94 IRPF), si compras el fondo indexado puedes cambiarlo de entidad o pasarlo a un fondo monetario sin pagar a Hacienda. Si compras acciones sueltas de Nvidia en un broker, cada venta te obligará a pagar entre el **19% y el 28%** en la Renta.
+#### 2. La regla del 'Cuchillo Cayendo' (Falling Knife)
+- En Wall Street existe un axioma: *intentar comprar una acción individual en plena caída libre por una crisis directiva es como intentar agarrar un cuchillo en el aire: es muy fácil cortarse*.
+- Que haya caído un 25% no significa que no pueda caer otro 20% adicional. En 2022 Nvidia cayó un **66%** antes de formar suelo.
+- Utilizar tus 10.000 € del banco (tus ahorros ganados con esfuerzo) para especular con una acción individual en crisis de gobernanza es el error número uno que arruina a inversores jóvenes.
 
 ---
 
-#### 4. Veredicto Final y Plan de Acción para Rubén
-- **De tus 10.000 € en el banco**: **0 €** a Nvidia. Esos 10.000 € son tu tranquilidad vital.
-- **De tus 500 € de ahorro mensual**:
-  - Tu aportación recomendada de 200-250 €/mes al fondo indexado ya compra Nvidia de forma matemáticamente equilibrada.
-  - Si por pasión tecnológica quieres tener más exposición directa a la IA, la regla de oro es destinar **como máximo un 5% a 10% de tu ahorro mensual (20 € a 25 €/mes)** en un fondo tecnológico o compra satélite. Nunca más de eso.
+#### 3. Cómo se aprovecha la caída de forma inteligente
+1. **Tu Fondo Indexado ya está comprando con un 25% de descuento:**  
+   En el **Vanguard Global (MSCI World)** o **Vanguard S&P 500**, Nvidia ya ha bajado de precio. Con tus aportaciones mensuales automáticas de 200-250 €, **ya compras Nvidia con un 25% de rebaja** sin asumir el riesgo de que la crisis corporativa se alargue años.
+2. **Ventaja Fiscal (Art. 94 IRPF):**  
+   Si compras acciones de Nvidia en un broker y luego tienes que vender para recortar pérdidas o rebalancear, tributas en Hacienda. Con los fondos indexados puedes mover capital sin peaje fiscal.
+3. **Si quieres comprar Nvidia directamente:**  
+   Solo hazlo con **DCA fraccionado pequeño (25 € a 50 €/mes)** del sobrante de tu nómina, comprando mes a mes mientras dure la incertidumbre. Jamás una orden grande de golpe.
+
+---
+
+#### 4. Veredicto Final para Rubén
+- **De tus 10.000 € en el banco:** **0 € a Nvidia.** Tu colchón es sagrado.
+- **De tus 500 € de ahorro mensual:**
+  - Mantén tu plan: 250 € siguen acumulando seguridad en cuenta/monetario, y tus 250 € en fondos indexados ya compran las rebajas de Nvidia de forma diversificada.
+  - Si tienes convicción tecnológica ciega: asigna como satélite máximo 25-50 € de tu nómina este mes.
         """
     }
 }

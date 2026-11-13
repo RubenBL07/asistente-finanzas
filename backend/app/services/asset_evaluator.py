@@ -17,40 +17,42 @@ DAILY_ASSET_VERDICTS: List[Dict[str, Any]] = [
         "ticker_display": "NASDAQ: NVDA",
         "category": "Acción Individual • Inteligencia Artificial",
         "verdict_tone": "caution", # buy | caution | avoid_lump_sum | safe_cash
-        "verdict_badge": "🟡 Precaución: Solo Satélite (Máx 5-10% de tu ahorro mensual)",
-        "verdict_summary": "NO metas tus 10.000 € de golpe. Gran empresa, pero valoración con prima de perfección. Además, si compras fondos indexados, ¡ya la estás comprando!",
+        "verdict_badge": "🔴 Corrección del ~25% • ¿Oportunidad o Cuchillo Cayendo?",
+        "verdict_summary": "Ha caído casi un 25% tras el terremoto de liderazgo (salida de Jensen Huang) y dudas sobre el Capex de Big Tech. NUNCA metas tus 10.000 € para cazar el rebote; si entras, solo compras satélite escalonadas (25-50 €/mes).",
         "what_happened": (
-            "Nvidia ha completado una de las mayores creaciones de riqueza de la historia económica mundial gracias a sus GPUs Hopper "
-            "(H100/H200) y el despliegue a escala de la arquitectura Blackwell (GB200/GB300). Los gigantes 'hyperscalers' "
-            "(Microsoft, Meta, Alphabet, Amazon) han destinado cientos de miles de millones de dólares en Capex de centros de datos, "
-            "elevando los márgenes netos de Nvidia a niveles insólitos del 60-70% y superando los 3 billones de dólares de capitalización."
+            "NVIDIA ha sufrido un desplome de casi el 25% desde sus máximos históricos debido a una tormenta perfecta de factores: "
+            "1) Terremoto institucional sin precedentes: La dimisión de Jensen Huang como CEO tras una investigación interna de la junta "
+            "(asumiendo Colette Kress el liderazgo interino), lo que detonó un pánico masivo por el 'riesgo de hombre clave'. "
+            "2) Digestión y cuellos de botella de Big Tech: Los compradores de centros de datos (Microsoft, Meta, Google) enfrentan "
+            "altos costes financieros, saturación eléctrica en redes y dudas de Wall Street sobre cuándo empezará la IA a generar beneficios reales. "
+            "3) Controles de exportación y escrutinio antimonopolio más estricto."
         ),
         "the_uncomfortable_truth": (
-            "La euforia hace olvidar el riesgo: Nvidia cotiza con un PER exigente (alrededor de 35-45x beneficios futuros). "
-            "El precio actual descuenta que el gasto multimillonario de las Big Tech crecerá sin descanso durante años. "
-            "En el momento en que Microsoft o Meta moderen su gasto para rentabilizar la infraestructura, o TSMC sufra cuellos de botella, "
-            "la acción puede sufrir correcciones del 30% al 50% en cuestión de semanas (en 2022 ya se desplomó un 66%)."
+            "¿Comprar las rebajas o no tocarlo? En Wall Street existe la regla del 'cuchillo cayendo' (falling knife): "
+            "Comprar de golpe una acción individual en medio de una crisis de liderazgo y desaceleración suele salir muy caro. "
+            "Que haya caído un 25% no significa que no pueda caer otro 20% adicional si los próximos trimestres muestran una reducción "
+            "en los pedidos de chips Blackwell o si la transición directiva genera retrasos. "
+            "En la corrección de 2022, Nvidia cayó un 66% antes de tocar suelo."
         ),
         "tax_and_strategy_reality_spain": (
-            "En España, comprar acciones sueltas de EE.UU. tiene dos grandes desventajas para ti: "
-            "1) Cada vez que vendas para rebalancear, Hacienda te cobrará entre el 19% y el 28% de IRPF sin poder traspasar a otro fondo. "
-            "2) En un fondo indexado como el Vanguard S&P 500 o MSCI World, Nvidia ya representa aproximadamente el 6.5% - 7% del total. "
-            "Por tanto, con tus 250 €/mes en fondos indexados ya estás comprando automáticamente entre 15 € y 18 € de Nvidia todos los meses, "
-            "de forma diversificada y con exención fiscal por traspaso (Art. 94 IRPF)."
+            "La gran ventaja del inversor indexado en España: "
+            "Con la caída del 25% de Nvidia, los fondos indexados como el Vanguard Global y el Vanguard S&P 500 ya han absorbido ese recorte. "
+            "Tus aportaciones mensuales automáticas (DCA) al fondo indexado YA ESTÁN comprando participaciones de Nvidia a precio de saldo "
+            "sin que tengas que exponerte a que la empresa sufra una crisis corporativa prolongada, y con el 100% de ventajas fiscales (Art. 94 IRPF)."
         ),
         "verdict_for_ruben": {
-            "dinero_en_banco_10k": "0 € — Tus 10.000 € son tu paz mental y deben permanecer en el banco o fondo monetario.",
-            "aportacion_mensual": "Si tienes fuerte convicción en la IA, destina como máximo un 5% a 10% de tu ahorro (ej. 20 - 25 €/mes) como posición satélite especulativa.",
-            "vehiculo_optimo": "Fondo Tecnológico Traspasable (ej. Fidelity MSCI World Information Tech) o compra fraccionada sin comisiones de custodia.",
-            "conclusion_directa": "Nunca inviertas en Nvidia por FOMO ('miedo a perderte la subida') cuando sale en los telediarios. El inversor inteligente compra barato, diversifica y deja que el interés compuesto haga el trabajo silencioso."
+            "dinero_en_banco_10k": "0 € — Prohibido tajantemente usar tus 10.000 € de reserva para intentar adivinar el suelo de Nvidia.",
+            "aportacion_mensual": "Si tu tesis es que el monopolio de chips de Nvidia sobrevivirá a la salida de Huang, aprovecha la caída con compras fraccionadas muy pequeñas (25 € a 50 €/mes) dentro de tu porción satélite.",
+            "vehiculo_optimo": "Fondo tecnológico o broker regulado sin comisiones de custodia; o simplemente aumentar ligeramente tu aportación al fondo indexado global.",
+            "conclusion_directa": "Nunca intentes atrapar un cuchillo que cae con todo tu dinero. Si quieres comprar rebajas en Nvidia, hazlo mes a mes en dosis pequeñas, o deja que tu fondo indexado global haga el trabajo sucio por ti."
         },
         "metrics": {
-            "forward_pe": "~38x (Valoración Alta)",
-            "index_weight_sp500": "6.8%",
-            "index_weight_msci": "4.5%",
-            "risk_level": "Alto (Volatilidad Individual)",
-            "horizon": "Mínimo 5-10 años",
-            "drawdown_from_ath": "-4.8%"
+            "forward_pe": "~28x (Tras la corrección del 25%)",
+            "index_weight_sp500": "5.6%",
+            "index_weight_msci": "3.8%",
+            "risk_level": "Extremo (Crisis Directiva + Volatilidad)",
+            "horizon": "Mínimo 5-7 años",
+            "drawdown_from_ath": "-24.6%"
         }
     },
     {

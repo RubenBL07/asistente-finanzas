@@ -31,24 +31,24 @@ const STATIC_FALLBACK_VERDICTS = [
     ticker_display: "NASDAQ: NVDA",
     category: "Acción Individual • Inteligencia Artificial",
     verdict_tone: "caution",
-    verdict_badge: "🟡 Precaución: Solo Satélite (Máx 5-10% del ahorro)",
-    verdict_summary: "NO metas tus 10.000 € de golpe. Extraordinaria empresa, pero valoración en niveles de perfección absoluta. Además: ¡ya la estás comprando en tu fondo indexado!",
-    what_happened: "Nvidia ha completado una de las mayores creaciones de riqueza de la historia económica mundial gracias a sus GPUs Hopper (H100/H200) y el despliegue de Blackwell (GB200/GB300). Los gigantes de Silicon Valley (Microsoft, Meta, Alphabet, Amazon) han destinado cientos de miles de millones de dólares en Capex de centros de datos de IA, catapultando a Nvidia por encima de los 3 billones de dólares de capitalización con márgenes netos del 60-70%.",
-    the_uncomfortable_truth: "La euforia hace olvidar el riesgo: Nvidia cotiza con un PER exigente (~35-45x beneficios esperados). El precio actual da por hecho que el gasto de Big Tech crecerá sin descanso. En cuanto los gigantes moderen su ritmo de compras para rentabilizar la inversión o TSMC tenga cuellos de botella, la acción puede corregir un 30% a 50% con facilidad (en 2022 ya se desplomó un 66%).",
-    tax_and_strategy_reality_spain: "En España, comprar acciones sueltas de EE.UU. tiene dos grandes peajes: 1) Cada venta tributa entre el 19% y el 28% de IRPF sin posibilidad de traspaso. 2) En un fondo indexado como el Vanguard S&P 500 o MSCI World, Nvidia ya pesa cerca de un 7% del total. Con tus 250 €/mes en indexados ya compras ~17 € de Nvidia cada mes de forma diversificada y sin tributar al cambiar de fondo (Art. 94 IRPF).",
+    verdict_badge: "🔴 Desplome del ~25% • ¿Oportunidad o Cuchillo Cayendo?",
+    verdict_summary: "Nvidia ha perdido casi un 25% tras la crisis de liderazgo (salida de Jensen Huang) y dudas sobre el Capex de Big Tech. NUNCA metas tus 10.000 € para cazar el rebote. Si quieres aprovechar las rebajas, solo compras satélite en DCA (25-50 €/mes).",
+    what_happened: "Nvidia ha sufrido una abrupta corrección de casi el 25% desde sus máximos históricos por una tormenta de noticias de máxima actualidad: 1) Crisis de liderazgo y dimisión de Jensen Huang tras una investigación de la junta directiva (asumiendo Colette Kress como interina), desatando pánico por la pérdida del 'hombre clave'. 2) Digestión de Capex: Los gigantes de Silicon Valley (Microsoft, Meta, Google, Amazon) sufren presiones de Wall Street para justificar el descomunal gasto en infraestructura de IA. 3) Cuellos de botella eléctricos y regulatorios.",
+    the_uncomfortable_truth: "¿Es una ganga o una trampa? En bolsa existe la regla de no intentar 'atrapar un cuchillo que cae' (falling knife). Que haya caído un 25% no significa que no pueda caer otro 20% si los próximos resultados muestran un freno en pedidos de chips Blackwell. En la corrección de 2022 ya se desplomó un 66% antes de tocar suelo.",
+    tax_and_strategy_reality_spain: "Tu fondo indexado global (Vanguard MSCI World) ya ha absorbido esta corrección del 25%. Con tus aportaciones mensuales automáticas estás comprando Nvidia con un 25% de descuento sin exponerte al riesgo de quiebra directiva de una sola empresa, y con 100% de ventajas fiscales (Art. 94 IRPF).",
     verdict_for_ruben: {
-      dinero_en_banco_10k: "0 € — Tus 10.000 € son tu tranquilidad vital y se quedan intactos en el banco o monetario.",
-      aportacion_mensual: "Si tienes gran convicción en la IA, destina como máximo un 5% a 10% de tu ahorro mensual (ej. 20-25 €/mes) en un fondo tecnológico o compra satélite.",
+      dinero_en_banco_10k: "0 € — Prohibido usar tus 10.000 € de reserva para intentar adivinar el suelo de una acción en caída.",
+      aportacion_mensual: "Si confías en la hegemonía tecnológica de Nvidia, aprovecha el recorte con compras escalonadas pequeñas (25 € a 50 €/mes) dentro de tu asignación satélite.",
       vehiculo_optimo: "Fondo Tecnológico Traspasable (ej. Fidelity MSCI World Info Tech) o dentro del fondo indexado global.",
-      conclusion_directa: "Nunca compres Nvidia por FOMO tras ver noticias alcistas. Los inversores inteligentes compran con margen de seguridad y diversificación sistemática."
+      conclusion_directa: "Aprovechar caídas en bolsa solo funciona si no te juegas tu colchón. Entra escalonadamente en dosis pequeñas o deja que tu fondo indexado compre las rebajas automáticamente."
     },
     metrics: {
-      forward_pe: "~38x (Valoración Alta)",
-      index_weight_sp500: "6.8%",
-      index_weight_msci: "4.5%",
-      risk_level: "Alto (Acción Individual)",
-      horizon: "Mínimo 5-10 años",
-      drawdown_from_ath: "-4.8%"
+      forward_pe: "~28x (Tras corrección)",
+      index_weight_sp500: "5.6%",
+      index_weight_msci: "3.8%",
+      risk_level: "Extremo (Crisis Directiva + Volatilidad)",
+      horizon: "Mínimo 5-7 años",
+      drawdown_from_ath: "-24.6%"
     }
   },
   {
@@ -274,59 +274,61 @@ export default function AssetInvestmentVerdict({ onNavigateTab }) {
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="px-3.5 py-1.5 rounded-2xl bg-amber-50 border border-amber-200 text-amber-900 text-xs font-bold flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
-              <span>VEREDICTO HOY: Precaución (Solo Satélite)</span>
+            <div className="px-3.5 py-1.5 rounded-2xl bg-rose-50 border border-rose-200 text-rose-900 text-xs font-bold flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-rose-600 animate-ping"></span>
+              <span>ACTUALIDAD: Desplome del ~25%</span>
             </div>
           </div>
         </div>
 
-        {/* Resumen del Veredicto en Píldora */}
-        <div className="my-5 p-4 sm:p-5 rounded-2xl bg-amber-50/60 border border-amber-200/80 text-amber-950 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-          <div className="flex items-start gap-3">
-            <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-            <p className="text-xs sm:text-sm font-semibold leading-relaxed">
-              <strong>Veredicto Directo:</strong> NO metas tus 10.000 € de golpe. La empresa es histórica, pero su valoración descuenta la perfección total. Además, si compras tu fondo indexado global recomendado, <strong>¡ya estás comprando Nvidia automáticamente todos los meses!</strong>
-            </p>
+        {/* Alerta de Actualidad Candente: El Desplome del 25% */}
+        <div className="my-5 p-4 sm:p-6 rounded-2xl bg-rose-50/80 border border-rose-200 text-rose-950 flex flex-col gap-3">
+          <div className="flex items-center gap-2 text-rose-800 font-extrabold text-xs uppercase tracking-wider">
+            <Flame className="w-4 h-4 text-rose-600" /> Alerta de Mercado: Corrección del 24.6% desde Máximos
+          </div>
+          <h3 className="text-base sm:text-lg font-extrabold text-slate-900">
+            Nvidia ha perdido casi un 25% de su valor: ¿Oportunidad histórica o cuchillo cayendo?
+          </h3>
+          <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+            La acción ha sufrido una de sus caídas más abruptas del ciclo por una combinación de factores de máxima actualidad: 
+            <strong> la inesperada dimisión de Jensen Huang como CEO</strong> tras una investigación interna de la junta directiva (asumiendo Colette Kress como CEO interina), 
+            el pánico por la pérdida del 'hombre clave', los cuellos de botella energéticos y las crecientes dudas sobre la rentabilidad del descomunal gasto (Capex) de Microsoft, Meta y Alphabet en chips de IA.
+          </p>
+          <div className="p-3 bg-white/90 rounded-xl border border-rose-200 text-xs font-semibold text-rose-950">
+            ⚠️ <strong>La Ley del Cuchillo Cayendo ('Falling Knife'):</strong> Cuando una acción cae un 25% por un terremoto de liderazgo, los inversores impulsivos se apresuran a meter todo su dinero creyendo que rebotará de inmediato. Pero una acción que cae un 25% puede caer otro 25% adicional si los siguientes trimestres decepcionan. En 2022 Nvidia cayó un 66% antes de recuperarse.
           </div>
         </div>
 
         {/* 3 Columnas del Análisis de Nvidia */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 text-xs sm:text-sm leading-relaxed text-slate-600">
           
-          {/* Columna 1: Lo que ha pasado */}
+          {/* Columna 1: Por qué se ha desplomado */}
           <div className="bg-slate-50/80 p-4 sm:p-5 rounded-2xl border border-slate-200/70">
-            <h3 className="font-bold text-slate-900 text-sm flex items-center gap-2 mb-2 text-emerald-800">
-              <Sparkles className="w-4 h-4 text-emerald-600" /> 1. Qué ha pasado realmente
+            <h3 className="font-bold text-slate-900 text-sm flex items-center gap-2 mb-2 text-rose-800">
+              <AlertTriangle className="w-4 h-4 text-rose-600" /> 1. Por qué ha caído un 25%
             </h3>
             <p className="text-slate-600 leading-relaxed text-xs">
-              Nvidia se ha convertido en el monopolio casi absoluto del hardware de IA gracias a sus GPUs Hopper (H100/H200) y al lanzamiento a gran escala de <strong>Blackwell (GB200)</strong>. 
-              Los gigantes de Silicon Valley (Microsoft, Meta, Google, Amazon) han destinado cientos de miles de millones en centros de datos, 
-              catapultando los márgenes de Nvidia al 65-70% y superando los <strong>3 billones de dólares</strong> de valor.
+              La salida de Jensen Huang ha generado un shock directivo descomunal. Wall Street consideraba a Huang el alma y visionario de Nvidia. A esto se suma que los compradores de centros de datos se están endeudando fuertemente y enfrentan cuellos de botella eléctricos para conectar miles de GPUs, moderando el ritmo de pedidos a corto plazo.
             </p>
           </div>
 
-          {/* Columna 2: La verdad incómoda de la valoración */}
+          {/* Columna 2: Cómo aprovechar la caída sin suicidio financiero */}
           <div className="bg-slate-50/80 p-4 sm:p-5 rounded-2xl border border-slate-200/70">
             <h3 className="font-bold text-slate-900 text-sm flex items-center gap-2 mb-2 text-amber-800">
-              <AlertTriangle className="w-4 h-4 text-amber-600" /> 2. La verdad sobre su precio
+              <Sparkles className="w-4 h-4 text-amber-600" /> 2. ¿Es momento de comprar?
             </h3>
             <p className="text-slate-600 leading-relaxed text-xs">
-              Cotiza con un PER exigente (~35-45x). El mercado descuenta que el gasto de Big Tech seguirá creciendo de forma ilimitada. 
-              En el instante en que las tecnológicas frenen su gasto para rentabilizar la inversión o TSMC tenga retrasos, 
-              <strong> la acción puede desplomarse un 30% a 50%</strong> en cuestión de semanas. En 2022 ya se hundió un 66%.
+              Para un inversor de 20 años: <strong>SÍ puede ser un punto de entrada interesante, pero JAMÁS de golpe</strong>. Si crees que los chips de Nvidia siguen sin tener rival real y que la IA seguirá creciendo a 10 años, comprar en caídas del 25% es inteligente <em>solo si lo haces en pequeñas dosis mensuales (DCA de 25-50 €/mes)</em> mientras se estabiliza la directiva.
             </p>
           </div>
 
-          {/* Columna 3: El secreto fiscal español */}
+          {/* Columna 3: Tu fondo indexado ya compra las rebajas */}
           <div className="bg-slate-50/80 p-4 sm:p-5 rounded-2xl border border-slate-200/70">
-            <h3 className="font-bold text-slate-900 text-sm flex items-center gap-2 mb-2 text-blue-900">
-              <Scale className="w-4 h-4 text-blue-600" /> 3. La trampa fiscal en España
+            <h3 className="font-bold text-slate-900 text-sm flex items-center gap-2 mb-2 text-emerald-800">
+              <CheckCircle2 className="w-4 h-4 text-emerald-600" /> 3. La compra automática barata
             </h3>
             <p className="text-slate-600 leading-relaxed text-xs">
-              Comprar acciones sueltas de EE.UU. te obliga a <strong>pagar entre el 19% y 28% a Hacienda</strong> en cada venta. 
-              En cambio, en un fondo indexado como el Vanguard S&P 500 o MSCI World, <strong>Nvidia ya pesa ~7%</strong>. 
-              Con tus 250 €/mes en indexados ya compras ~17 € de Nvidia cada mes de forma diversificada y sin peaje fiscal (Art. 94 IRPF).
+              Al caer un 25%, el precio de las participaciones del fondo indexado global o S&P 500 se ha abaratado. Cada euro que aportas mes a mes (tus 200-250 €) ya está comprando Nvidia con ese 25% de rebaja, sin que asumas el riesgo de que la empresa tarde 2 años en resolver su crisis interna.
             </p>
           </div>
 
@@ -335,23 +337,23 @@ export default function AssetInvestmentVerdict({ onNavigateTab }) {
         {/* Plan de Acción Específico para Rubén */}
         <div className="mt-5 p-4 sm:p-5 rounded-2xl bg-emerald-50/70 border border-emerald-200">
           <h4 className="font-bold text-emerald-950 text-xs sm:text-sm uppercase tracking-wider mb-2 flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-emerald-700" /> Hoja de Ruta para Rubén (20 años):
+            <CheckCircle2 className="w-4 h-4 text-emerald-700" /> Plan Quirúrgico para Rubén ante la caída del 25%:
           </h4>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs text-slate-700 font-medium">
-            <div className="bg-white p-3 rounded-xl border border-emerald-100">
-              <span className="text-slate-400 block text-[10px] uppercase font-bold">Tus 10.000 € en el banco</span>
-              <strong className="text-slate-900 text-sm block mt-0.5">0 € en Nvidia</strong>
-              <span className="text-[11px] text-slate-500">Tus ahorros son tu paz mental y no se juegan en una sola acción.</span>
+            <div className="bg-white p-3 rounded-xl border border-rose-200">
+              <span className="text-rose-500 block text-[10px] uppercase font-bold">Tus 10.000 € del banco</span>
+              <strong className="text-rose-900 text-sm block mt-0.5">0 € (Intocables)</strong>
+              <span className="text-[11px] text-slate-500">Nunca uses tu fondo de emergencia para cazar caídas individuales.</span>
             </div>
             <div className="bg-white p-3 rounded-xl border border-emerald-100">
-              <span className="text-slate-400 block text-[10px] uppercase font-bold">Tu Fondo Indexado Mensual</span>
-              <strong className="text-emerald-700 text-sm block mt-0.5">~17 €/mes automáticos</strong>
-              <span className="text-[11px] text-slate-500">Ya compras Nvidia dentro del Vanguard Global con 1.500 empresas más.</span>
+              <span className="text-slate-400 block text-[10px] uppercase font-bold">Compra Automática Indexada</span>
+              <strong className="text-emerald-700 text-sm block mt-0.5">Comprando con -25%</strong>
+              <span className="text-[11px] text-slate-500">Tu aportación mensual en Vanguard compra Nvidia a precio rebajado.</span>
             </div>
-            <div className="bg-white p-3 rounded-xl border border-emerald-100">
-              <span className="text-slate-400 block text-[10px] uppercase font-bold">Si quieres Satélite Especulativo</span>
-              <strong className="text-amber-700 text-sm block mt-0.5">Máximo 20-25 €/mes</strong>
-              <span className="text-[11px] text-slate-500">Solo el 5-10% de tu ahorro mensual y nunca dinero esencial.</span>
+            <div className="bg-white p-3 rounded-xl border border-amber-200">
+              <span className="text-amber-600 block text-[10px] uppercase font-bold">Si quieres entrar directo</span>
+              <strong className="text-slate-900 text-sm block mt-0.5">DCA de 25-50 €/mes</strong>
+              <span className="text-[11px] text-slate-500">Compras escalonadas mes a mes. Si sigue cayendo, promedias a la baja.</span>
             </div>
           </div>
         </div>

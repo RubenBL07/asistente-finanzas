@@ -143,18 +143,18 @@ export default function DailyBriefing({ onNavigateTab }) {
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-[10px] font-bold uppercase tracking-wider bg-emerald-500/30 text-emerald-300 px-2 py-0.5 rounded-full font-mono">
-                Veredicto del Día
+              <span className="text-[10px] font-bold uppercase tracking-wider bg-rose-500/30 text-rose-300 px-2 py-0.5 rounded-full font-mono">
+                Alerta de Actualidad
               </span>
-              <span className="text-xs text-amber-300 font-bold flex items-center gap-1">
-                • NVIDIA: 🟡 Precaución Satélite
+              <span className="text-xs text-rose-300 font-bold flex items-center gap-1">
+                • NVIDIA: 🔴 Desplome del ~25%
               </span>
             </div>
             <h3 className="text-sm sm:text-base font-extrabold text-white mt-1">
-              ¿Deberías meter dinero hoy en NVIDIA u otros activos?
+              Nvidia cae casi un 25%: ¿Es momento de aprovechar las rebajas?
             </h3>
             <p className="text-xs text-slate-300 hidden sm:block mt-0.5">
-              Análisis sincero y sin humo para tu perfil: 20 años, 10.000 € y 500 €/mes de ahorro.
+              Crisis de liderazgo y dudas de Big Tech: descubre cómo actuar con tus 20 años y tu ahorro mensual.
             </p>
           </div>
         </div>
