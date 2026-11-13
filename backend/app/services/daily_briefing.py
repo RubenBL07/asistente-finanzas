@@ -126,25 +126,49 @@ def get_daily_briefing() -> Dict[str, Any]:
 
     daily_bulletins = [
         {
-            "categoria": "Renta Variable Mundial",
-            "titulo": "Fondos Indexados Vanguard Global (MSCI World)",
-            "impacto": f"Variación 24h: {'+' if msci_change >= 0 else ''}{msci_change}%.",
-            "explicacion": "Las más de 1.500 mayores empresas del planeta siguen facturando millones a diario. Estructura sólida.",
-            "relevancia": "Fondo Principal"
+            "categoria": "IA & Semiconductores",
+            "titulo": "Terremoto en NVIDIA (-24.6%) y el debate sobre el Capex de Big Tech",
+            "impacto": "La salida de Jensen Huang y dudas sobre el retorno de la IA provocan ventas masivas.",
+            "lo_que_pasa": "La marcha forzada del histórico CEO de Nvidia y el escrutinio a los miles de millones gastados por Microsoft, Meta y Alphabet han provocado una corrección severa del 25% en el líder de los chips.",
+            "veredicto_ruben": "Aprovechar las rebajas mediante tu fondo indexado global (MSCI World). Si entras en Nvidia directo, solo DCA pequeño (25-50 €/mes). 0 € de tus 10.000 € del banco.",
+            "semaforo": "🟡 Precaución / Oportunidad en DCA",
+            "relevancia": "Megatendencia IA"
         },
         {
-            "categoria": "Cuentas y Tipos BCE",
-            "titulo": "Remuneración de Cuentas de Ahorro",
-            "impacto": "Tipos oficiales estables entre el 3.0% y el 3.25% TAE.",
-            "explicacion": "Tu cuenta de ahorro o monetario en Trade Republic / MyInvestor sigue remunerando tu dinero líquido cada mes.",
-            "relevancia": "Tu Colchón Seguro"
+            "categoria": "Banco Central Europeo (BCE)",
+            "titulo": "Recorte de tipos de interés hacia el 3.00% / 2.75% en la Eurozona",
+            "impacto": "Las cuentas de ahorro empezarán a pagar ligeramente menos; la bolsa recibe impulso.",
+            "lo_que_pasa": "Con la inflación europea controlada y la economía alemana estancada, Christine Lagarde abarata el precio del dinero para incentivar el crédito y reactivar el crecimiento.",
+            "veredicto_ruben": "Tus 10.000 € en Trade Republic o monetario siguen generando intereses seguros (~300 €/año), pero la bajada de tipos hace aún más rentable invertir tus 250 €/mes en fondos indexados.",
+            "semaforo": "🟢 Favorable para Fondos Indexados",
+            "relevancia": "Política Monetaria"
         },
         {
-            "categoria": "Calendario de Cobro",
-            "titulo": "Nómina el día 28 • Ahorro el día 29",
-            "impacto": f"Próxima inyección de liquidez: 1.430 € el día 28.",
-            "explicacion": "Aportar el día 29 justo después de cobrar asegura que tu dinero trabaje de forma sistemática y sin esfuerzo de voluntad.",
-            "relevancia": "Automatización"
+            "categoria": "Geopolítica & Aranceles EE.UU.",
+            "titulo": "Guerra comercial, aranceles y la deuda pública récord en Washington",
+            "impacto": "Volatilidad en bonos del Tesoro y sectores exportadores globales.",
+            "lo_que_pasa": "La política proteccionista estadounidense y el debate sobre la sostenibilidad del déficit generan tensiones comerciales con Europa y China.",
+            "veredicto_ruben": "Puro ruido de corto plazo. Tu fondo indexado global tiene más de 1.500 empresas de todo el mundo y se autolimpia solo. No cambies tu estrategia por titulares políticos.",
+            "semaforo": "⚪ Ruido Político: Mantener Rumbo",
+            "relevancia": "Geopolítica Global"
+        },
+        {
+            "categoria": "Materias Primas & Refugio",
+            "titulo": "Los Bancos Centrales compran oro a ritmo histórico como activo refugio",
+            "impacto": "El oro cotiza en zonas récord impulsado por la desdolarización.",
+            "lo_que_pasa": "Países como China, India y economías emergentes acumulan lingotes físicos para reducir su exposición a las sanciones internacionales y al dólar.",
+            "veredicto_ruben": "No compres oro por FOMO en máximos. A tus 20 años necesitas negocios productivos con beneficios crecientes (renta variable indexada), no metal inerte en una caja fuerte.",
+            "semaforo": "⚪ Cobertura Neutra (No prioritario)",
+            "relevancia": "Reserva de Valor"
+        },
+        {
+            "categoria": "Criptoactivos & ETFs",
+            "titulo": "Institucionalización de Bitcoin y debate sobre reservas estratégicas",
+            "impacto": "Grandes fondos de inversión de Wall Street canalizan miles de millones a través de ETFs spot.",
+            "lo_que_pasa": "Bitcoin se consolida como el 'oro digital', pero mantiene oscilaciones bruscas del 30-50% en función de la liquidez global.",
+            "veredicto_ruben": "Trátalo estrictamente como satélite especulativo con un máximo del 2-5% de tu ahorro mensual (15-20 €/mes). Queda prohibido meter dinero de tu colchón bancario aquí.",
+            "semaforo": "🟡 Satélite de Alta Volatilidad",
+            "relevancia": "Activo Alternativo"
         }
     ]
 

@@ -40,25 +40,49 @@ const DEFAULT_BRIEFING = {
   ],
   daily_bulletins: [
     {
-      categoria: "Renta Variable Mundial",
-      titulo: "Fondos Indexados Vanguard Global (MSCI World)",
-      impacto: "Variación 24h: +0.35%",
-      explicacion: "Las más de 1.500 mayores empresas del planeta siguen facturando millones a diario. Estructura sólida.",
-      relevancia: "Fondo Principal"
+      categoria: "IA & Semiconductores",
+      titulo: "Terremoto en NVIDIA (-24.6%) y el debate sobre el Capex de Big Tech",
+      impacto: "La salida de Jensen Huang y dudas sobre el retorno de la IA provocan ventas masivas.",
+      lo_que_pasa: "La marcha forzada del histórico CEO de Nvidia y el escrutinio a los miles de millones gastados por Microsoft, Meta y Alphabet han provocado una corrección severa del 25% en el líder de los chips.",
+      veredicto_ruben: "Aprovechar las rebajas mediante tu fondo indexado global (MSCI World). Si entras en Nvidia directo, solo DCA pequeño (25-50 €/mes). 0 € de tus 10.000 € del banco.",
+      semaforo: "🟡 Precaución / Oportunidad en DCA",
+      relevancia: "Megatendencia IA"
     },
     {
-      categoria: "Cuentas y Tipos BCE",
-      titulo: "Remuneración de Cuentas de Ahorro",
-      impacto: "Tipos oficiales estables entre el 3.0% y el 3.25% TAE",
-      explicacion: "Tu cuenta de ahorro o monetario en Trade Republic / MyInvestor sigue remunerando tu dinero líquido cada mes.",
-      relevancia: "Tu Colchón Seguro"
+      categoria: "Banco Central Europeo (BCE)",
+      titulo: "Recorte de tipos de interés hacia el 3.00% / 2.75% en la Eurozona",
+      impacto: "Las cuentas de ahorro empezarán a pagar ligeramente menos; la bolsa recibe impulso.",
+      lo_que_pasa: "Con la inflación europea controlada y la economía alemana estancada, Christine Lagarde abarata el precio del dinero para incentivar el crédito y reactivar el crecimiento.",
+      veredicto_ruben: "Tus 10.000 € en Trade Republic o monetario siguen generando intereses seguros (~300 €/año), pero la bajada de tipos hace aún más rentable invertir tus 250 €/mes en fondos indexados.",
+      semaforo: "🟢 Favorable para Fondos Indexados",
+      relevancia: "Política Monetaria"
     },
     {
-      categoria: "Calendario de Cobro",
-      titulo: "Nómina el día 28 • Ahorro el día 29",
-      impacto: "Próxima inyección de liquidez: 1.430 € el día 28.",
-      explicacion: "Aportar el día 29 justo después de cobrar asegura que tu dinero trabaje de forma sistemática y sin esfuerzo de voluntad.",
-      relevancia: "Automatización"
+      categoria: "Geopolítica & Aranceles EE.UU.",
+      titulo: "Guerra comercial, aranceles y la deuda pública récord en Washington",
+      impacto: "Volatilidad en bonos del Tesoro y sectores exportadores globales.",
+      lo_que_pasa: "La política proteccionista estadounidense y el debate sobre la sostenibilidad del déficit generan tensiones comerciales con Europa y China.",
+      veredicto_ruben: "Puro ruido de corto plazo. Tu fondo indexado global tiene más de 1.500 empresas de todo el mundo y se autolimpia solo. No cambies tu estrategia por titulares políticos.",
+      semaforo: "⚪ Ruido Político: Mantener Rumbo",
+      relevancia: "Geopolítica Global"
+    },
+    {
+      categoria: "Materias Primas & Refugio",
+      titulo: "Los Bancos Centrales compran oro a ritmo histórico como activo refugio",
+      impacto: "El oro cotiza en zonas récord impulsado por la desdolarización.",
+      lo_que_pasa: "Países como China, India y economías emergentes acumulan lingotes físicos para reducir su exposición a las sanciones internacionales y al dólar.",
+      veredicto_ruben: "No compres oro por FOMO en máximos. A tus 20 años necesitas negocios productivos con beneficios crecientes (renta variable indexada), no metal inerte en una caja fuerte.",
+      semaforo: "⚪ Cobertura Neutra (No prioritario)",
+      relevancia: "Reserva de Valor"
+    },
+    {
+      categoria: "Criptoactivos & ETFs",
+      titulo: "Institucionalización de Bitcoin y debate sobre reservas estratégicas",
+      impacto: "Grandes fondos de inversión de Wall Street canalizan miles de millones a través de ETFs spot.",
+      lo_que_pasa: "Bitcoin se consolida como el 'oro digital', pero mantiene oscilaciones bruscas del 30-50% en función de la liquidez global.",
+      veredicto_ruben: "Trátalo estrictamente como satélite especulativo con un máximo del 2-5% de tu ahorro mensual (15-20 €/mes). Queda prohibido meter dinero de tu colchón bancario aquí.",
+      semaforo: "🟡 Satélite de Alta Volatilidad",
+      relevancia: "Activo Alternativo"
     }
   ],
   daily_wisdom: {
@@ -206,37 +230,51 @@ export default function DailyBriefing({ onNavigateTab }) {
         </div>
       </div>
 
-      {/* 3. NOVEDADES Y PULSO DEL MERCADO EN LAS ÚLTIMAS 24 HORAS */}
+      {/* 3. RADAR DE NOTICIAS DEL MUNDO EN VIVO: IMPACTO REAL EN TU DINERO */}
       <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-7 border border-slate-200/80 shadow-soft">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 sm:pb-4 border-b border-slate-100 gap-2 mb-4 sm:mb-5">
           <div>
             <h3 className="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2">
-              <Newspaper className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-700" /> Novedades del Mercado (24 Horas)
+              <Newspaper className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-700" /> Radar de Noticias del Mundo en Vivo
             </h3>
-            <p className="text-xs text-slate-400">Explicadas en cristiano, sin jerga confusa ni alarmismo</p>
+            <p className="text-xs text-slate-400">La actualidad económica y geopolítica explicada con honestidad y cómo afecta a tu bolsillo</p>
           </div>
-          <span className="text-[11px] sm:text-xs font-bold text-emerald-800 bg-emerald-50 px-2.5 sm:px-3 py-1 rounded-full border border-emerald-200 self-start sm:self-auto">
+          <span className="text-[11px] sm:text-xs font-bold text-emerald-800 bg-emerald-50 px-2.5 sm:px-3 py-1 rounded-full border border-emerald-200 self-start sm:self-auto font-mono">
             {briefing.market_headline}
           </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {briefing.daily_bulletins.map((b, idx) => (
-            <div key={idx} className="p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-slate-200/80 hover:border-emerald-300 transition flex flex-col justify-between">
+            <div key={idx} className="p-4 sm:p-5 rounded-2xl border border-slate-200/80 hover:border-emerald-300 transition-all flex flex-col justify-between bg-white shadow-xs">
               <div>
-                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
-                  {b.categoria}
-                </span>
-                <h4 className="text-xs sm:text-sm font-bold text-slate-900 mt-1 mb-1">{b.titulo}</h4>
-                <p className="text-xs font-mono font-bold text-emerald-700 my-1">{b.impacto}</p>
-                <p className="text-xs text-slate-500 leading-relaxed mt-2">
-                  {b.explicacion}
+                <div className="flex items-center justify-between gap-1 mb-2">
+                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider font-mono">
+                    {b.categoria}
+                  </span>
+                  {b.semaforo && (
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
+                      {b.semaforo.split(':')[0]}
+                    </span>
+                  )}
+                </div>
+
+                <h4 className="text-sm font-bold text-slate-900 mb-1 leading-snug">{b.titulo}</h4>
+                
+                <p className="text-xs font-semibold text-rose-700 font-mono my-1.5 bg-rose-50/70 px-2 py-1 rounded-lg">
+                  ⚡ {b.impacto}
+                </p>
+
+                <p className="text-xs text-slate-600 leading-relaxed mt-2">
+                  {b.lo_que_pasa || b.explicacion}
                 </p>
               </div>
 
-              <div className="mt-3 sm:mt-4 pt-2.5 sm:pt-3 border-t border-slate-100 flex justify-between items-center text-[11px] text-slate-400 font-medium">
-                <span>{b.relevancia}</span>
-                <span className="text-emerald-700 font-bold">Todo en orden</span>
+              <div className="mt-4 pt-3 border-t border-slate-100">
+                <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-100 text-xs text-slate-800 leading-relaxed">
+                  <strong className="text-slate-900 block text-[11px] mb-0.5">🎯 Veredicto para Rubén:</strong>
+                  <span>{b.veredicto_ruben || "Mantener plan sistemático mensual."}</span>
+                </div>
               </div>
             </div>
           ))}
