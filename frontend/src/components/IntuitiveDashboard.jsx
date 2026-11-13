@@ -66,39 +66,80 @@ export default function IntuitiveDashboard({ strategyData, marketData, onNavigat
 
   const final10YearValue = projectionData[projectionData.length - 1].total;
 
+  // Cálculo de cuenta atrás hasta la nómina del día 28
+  const today = new Date();
+  const payrollDay = 28;
+  let daysUntilPayroll = 0;
+  if (today.getDate() < payrollDay) {
+    daysUntilPayroll = payrollDay - today.getDate();
+  } else if (today.getDate() === payrollDay) {
+    daysUntilPayroll = 0;
+  } else {
+    const nextMonth = new Date(today.getFullYear(), today.getMonth() + 1, payrollDay);
+    daysUntilPayroll = Math.ceil((nextMonth - today) / (1000 * 60 * 60 * 24));
+  }
+
   return (
     <div className="space-y-4 sm:space-y-6 animate-fadeIn pb-6">
-      {/* 1. BANNER PRINCIPAL DE BIENVENIDA ADAPTADO A SU ESTRATEGIA REAL */}
+      
+      {/* 1. HERO HEADER: ESTADO FINANCIERO EN UN VISTAZO */}
       <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-slate-200/80 shadow-soft flex flex-col md:flex-row md:items-center justify-between gap-4 sm:gap-6">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/60 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            Estrategia Gradual y Segura
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-2 font-mono">
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-700" /> Centro de Mando • Rubén (20 años)
           </div>
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight">
-            Tu Dinero, Tus Reglas y a tu Propio Ritmo
+            Tu Dinero Organizado, Seguro y Sin Estrés
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 mt-1 max-w-2xl leading-relaxed">
-            Tienes <strong className="text-slate-800">10.000 € seguros en tu banco</strong> que no tienes ninguna prisa en tocar. Cada mes apartas <strong className="text-slate-800">500 € de tu nómina</strong> para ahorrar, y de ahí destinas un porcentaje a invertir con tranquilidad.
+            Tienes <strong className="text-slate-800">10.000 € intactos en tu banco</strong> como escudo de paz mental. 
+            Cobras <strong className="text-slate-800">1.430 €/mes</strong>, apartas <strong className="text-slate-800">500 € para ahorrar</strong> y tienes <strong className="text-slate-800">930 € limpios</strong> para tus gastos y ocio.
           </p>
         </div>
 
-        {/* Semáforo del Mercado */}
-        <div className="bg-slate-50 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl border border-slate-200/70 shrink-0 text-left md:text-right">
-          <span className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider block">
-            Semáforo de Mercado Hoy
-          </span>
-          <div className="flex items-center gap-2 mt-1 md:justify-end">
-            <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-emerald-500 ring-4 ring-emerald-100"></span>
-            <span className="text-xs sm:text-sm font-extrabold text-emerald-800">Momento Óptimo para Aportar</span>
+        {/* Contador de Nómina del día 28 */}
+        <div className="bg-emerald-50/70 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl border border-emerald-200/80 shrink-0 text-left md:text-right">
+          <div className="flex items-center gap-1.5 md:justify-end text-[10px] sm:text-[11px] font-bold text-emerald-800 uppercase tracking-wider font-mono">
+            <Calendar className="w-3.5 h-3.5 text-emerald-700" /> Próxima Nómina (Día 28)
           </div>
-          <p className="text-[10px] sm:text-[11px] text-slate-500 mt-1">
-            Sin intentar adivinar techos ni suelos. Aportaciones periódicas tranquilas.
+          <div className="text-lg sm:text-xl font-extrabold text-emerald-950 font-mono mt-0.5">
+            {daysUntilPayroll === 0 ? "¡Hoy es día 28! 🎉" : `En ${daysUntilPayroll} días`}
+          </div>
+          <p className="text-[10px] sm:text-[11px] text-emerald-700 font-medium mt-0.5">
+            Cobro de 1.430 € • Ahorro el día 29
           </p>
         </div>
       </div>
 
-      {/* 2. REPARTO INTERACTIVO DE TUS 500 € DE AHORRO MENSUAL */}
+      {/* 2. ALERTA DE MERCADO: NOTICIAS Y VEREDICTO DE INVERSIÓN */}
+      <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-emerald-950 rounded-2xl sm:rounded-3xl p-4 sm:p-5 text-white shadow-soft flex flex-col sm:flex-row sm:items-center justify-between gap-3 border border-slate-700/60">
+        <div className="flex items-center gap-3.5">
+          <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-rose-600/30 border border-rose-500/40 text-rose-300 flex items-center justify-center shrink-0">
+            <Sparkles className="w-5 h-5 text-rose-300" />
+          </div>
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="text-[10px] font-bold uppercase tracking-wider bg-rose-500/30 text-rose-300 px-2 py-0.5 rounded-full font-mono">
+                Actualidad en Vivo
+              </span>
+              <span className="text-xs text-rose-300 font-bold">Nvidia cae un 25% • El BCE recorta tipos</span>
+            </div>
+            <h4 className="text-sm sm:text-base font-extrabold text-white mt-0.5">
+              ¿Deberías aprovechar las rebajas hoy o evitar el "cuchillo cayendo"?
+            </h4>
+          </div>
+        </div>
+
+        <button
+          onClick={() => onNavigateTab && onNavigateTab('radar')}
+          className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition shadow-xs shrink-0 cursor-pointer self-stretch sm:self-auto"
+        >
+          <span>Ver Veredicto del Mercado</span>
+          <ArrowRight className="w-3.5 h-3.5" />
+        </button>
+      </div>
+
+      {/* 3. REPARTO INTERACTIVO DE TUS 500 € DE AHORRO MENSUAL */}
       <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-7 border border-slate-200/80 shadow-soft">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 sm:pb-4 border-b border-slate-100 gap-2 mb-4 sm:mb-6">
           <div>

@@ -45,7 +45,7 @@ export default function App() {
   const [showChangePinModal, setShowChangePinModal] = useState(false);
   const [newPinInput, setNewPinInput] = useState('');
 
-  const [activeTab, setActiveTab] = useState('briefing');
+  const [activeTab, setActiveTab] = useState('dashboard');
   const [strategyData, setStrategyData] = useState(null);
   const [marketData, setMarketData] = useState(null);
   const [tacticalSignals, setTacticalSignals] = useState(null);
@@ -133,22 +133,18 @@ export default function App() {
   };
 
   const navItems = [
-    { id: 'briefing', label: '🌅 Novedades & Hoy', shortLabel: 'Hoy', icon: Sun },
-    { id: 'veredicto', label: '🎯 ¿Invertir Hoy?', shortLabel: '¿Invertir Hoy?', icon: Target },
-    { id: 'dashboard', label: 'Mi Panel & 500 €', shortLabel: 'Mi Panel', icon: LayoutGrid },
-    { id: 'plan', label: 'Plan 10.000 €', shortLabel: 'Plan 10k', icon: Wallet },
-    { id: 'radar', label: 'Semáforo Mercado', shortLabel: 'Mercado', icon: Activity },
-    { id: 'simulator', label: 'Simulador', shortLabel: 'Simulador', icon: Calculator },
-    { id: 'advisor', label: 'Asistente 24/7', shortLabel: 'Asesor', icon: MessageSquare },
-    { id: 'tax', label: 'Fiscalidad', shortLabel: 'Fiscalidad', icon: Scale },
+    { id: 'dashboard', label: '🏛️ Mi Dinero & Hoy', shortLabel: 'Mi Dinero', icon: LayoutGrid },
+    { id: 'radar', label: '🌍 Mercado & ¿Invertir?', shortLabel: 'Mercado', icon: Target },
+    { id: 'simulator', label: '🔮 Simulador', shortLabel: 'Simulador', icon: Calculator },
+    { id: 'advisor', label: '💬 Asistente IA', shortLabel: 'Asistente', icon: MessageSquare },
+    { id: 'tax', label: '📚 Guía & Fiscalidad', shortLabel: 'Fiscalidad', icon: Scale },
   ];
 
   const mobileBottomNavItems = [
-    { id: 'briefing', label: 'Hoy', icon: Sun },
-    { id: 'veredicto', label: '¿Invertir?', icon: Target },
-    { id: 'dashboard', label: 'Mi Panel', icon: LayoutGrid },
-    { id: 'radar', label: 'Mercado', icon: Activity },
-    { id: 'advisor', label: 'Asesor', icon: MessageSquare },
+    { id: 'dashboard', label: 'Mi Dinero', icon: LayoutGrid },
+    { id: 'radar', label: 'Mercado', icon: Target },
+    { id: 'simulator', label: 'Simulador', icon: Calculator },
+    { id: 'advisor', label: 'Asistente', icon: MessageSquare },
   ];
 
   const handleCopyLink = () => {
@@ -360,18 +356,6 @@ export default function App() {
 
       {/* 2. CONTENIDO PRINCIPAL A PANTALLA COMPLETA */}
       <main className="flex-1 w-full px-3 sm:px-6 lg:px-10 py-4 sm:py-6 pb-24 md:pb-8 max-w-[1920px] mx-auto">
-        {activeTab === 'briefing' && (
-          <DailyBriefing 
-            onNavigateTab={setActiveTab}
-          />
-        )}
-
-        {activeTab === 'veredicto' && (
-          <AssetInvestmentVerdict 
-            onNavigateTab={setActiveTab}
-          />
-        )}
-
         {activeTab === 'dashboard' && (
           <IntuitiveDashboard 
             strategyData={strategyData}
@@ -381,19 +365,9 @@ export default function App() {
           />
         )}
 
-        {activeTab === 'plan' && (
-          <PlanOverview 
-            strategyData={strategyData} 
-            onNavigateTab={setActiveTab} 
-          />
-        )}
-
-        {activeTab === 'radar' && (
-          <MarketRadar 
-            marketData={marketData} 
-            tacticalSignals={tacticalSignals}
-            onRefresh={fetchAllData}
-            isRefreshing={isRefreshing}
+        {(activeTab === 'radar' || activeTab === 'veredicto') && (
+          <AssetInvestmentVerdict 
+            onNavigateTab={setActiveTab}
           />
         )}
 
@@ -402,11 +376,15 @@ export default function App() {
         )}
 
         {activeTab === 'advisor' && (
-          <EruditeAdvisorChat />
+          <EruditeAdvisorChat 
+            onNavigateTab={setActiveTab}
+          />
         )}
 
         {activeTab === 'tax' && (
-          <SpanishTaxFunds />
+          <SpanishTaxFunds 
+            onNavigateTab={setActiveTab}
+          />
         )}
       </main>
 
@@ -469,42 +447,6 @@ export default function App() {
 
             <div className="space-y-2">
               <button
-                onClick={() => { setActiveTab('plan'); setShowMoreMenu(false); }}
-                className={`w-full p-3.5 rounded-2xl border text-left flex items-center justify-between transition ${
-                  activeTab === 'plan' ? 'bg-emerald-50 border-emerald-300 text-emerald-900' : 'bg-slate-50 hover:bg-slate-100 border-slate-200'
-                }`}
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold">
-                    <Wallet className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-slate-900">Plan Maestro 10.000 €</h4>
-                    <p className="text-[11px] text-slate-500">Distribución de tu capital inicial y colchón</p>
-                  </div>
-                </div>
-                <ChevronRight className="w-4 h-4 text-slate-400" />
-              </button>
-
-              <button
-                onClick={() => { setActiveTab('simulator'); setShowMoreMenu(false); }}
-                className={`w-full p-3.5 rounded-2xl border text-left flex items-center justify-between transition ${
-                  activeTab === 'simulator' ? 'bg-emerald-50 border-emerald-300 text-emerald-900' : 'bg-slate-50 hover:bg-slate-100 border-slate-200'
-                }`}
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold">
-                    <Calculator className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-slate-900">Simulador Monte Carlo</h4>
-                    <p className="text-[11px] text-slate-500">Cálculo de interés compuesto y proyecciones</p>
-                  </div>
-                </div>
-                <ChevronRight className="w-4 h-4 text-slate-400" />
-              </button>
-
-              <button
                 onClick={() => { setActiveTab('tax'); setShowMoreMenu(false); }}
                 className={`w-full p-3.5 rounded-2xl border text-left flex items-center justify-between transition ${
                   activeTab === 'tax' ? 'bg-emerald-50 border-emerald-300 text-emerald-900' : 'bg-slate-50 hover:bg-slate-100 border-slate-200'
@@ -515,8 +457,8 @@ export default function App() {
                     <Scale className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-slate-900">Fiscalidad y Fondos en España</h4>
-                    <p className="text-[11px] text-slate-500">Art. 94 Ley IRPF y catálogo de fondos</p>
+                    <h4 className="text-xs font-bold text-slate-900">Guía de Fondos y Fiscalidad en España</h4>
+                    <p className="text-[11px] text-slate-500">Art. 94 Ley IRPF y fondos indexados MyInvestor</p>
                   </div>
                 </div>
                 <ChevronRight className="w-4 h-4 text-slate-400" />
