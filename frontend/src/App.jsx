@@ -19,7 +19,8 @@ import {
   Unlock,
   KeyRound,
   ShieldCheck,
-  AlertCircle
+  AlertCircle,
+  Target
 } from 'lucide-react';
 
 import DailyBriefing from './components/DailyBriefing';
@@ -29,6 +30,7 @@ import MarketRadar from './components/MarketRadar';
 import WealthSimulator from './components/WealthSimulator';
 import EruditeAdvisorChat from './components/EruditeAdvisorChat';
 import SpanishTaxFunds from './components/SpanishTaxFunds';
+import AssetInvestmentVerdict from './components/AssetInvestmentVerdict';
 
 export default function App() {
   // Autenticación por PIN para acceso seguro en la nube pública
@@ -132,6 +134,7 @@ export default function App() {
 
   const navItems = [
     { id: 'briefing', label: '🌅 Novedades & Hoy', shortLabel: 'Hoy', icon: Sun },
+    { id: 'veredicto', label: '🎯 ¿Invertir Hoy?', shortLabel: '¿Invertir Hoy?', icon: Target },
     { id: 'dashboard', label: 'Mi Panel & 500 €', shortLabel: 'Mi Panel', icon: LayoutGrid },
     { id: 'plan', label: 'Plan 10.000 €', shortLabel: 'Plan 10k', icon: Wallet },
     { id: 'radar', label: 'Semáforo Mercado', shortLabel: 'Mercado', icon: Activity },
@@ -142,8 +145,8 @@ export default function App() {
 
   const mobileBottomNavItems = [
     { id: 'briefing', label: 'Hoy', icon: Sun },
+    { id: 'veredicto', label: '¿Invertir?', icon: Target },
     { id: 'dashboard', label: 'Mi Panel', icon: LayoutGrid },
-    { id: 'plan', label: 'Plan 10k', icon: Wallet },
     { id: 'radar', label: 'Mercado', icon: Activity },
     { id: 'advisor', label: 'Asesor', icon: MessageSquare },
   ];
@@ -363,6 +366,12 @@ export default function App() {
           />
         )}
 
+        {activeTab === 'veredicto' && (
+          <AssetInvestmentVerdict 
+            onNavigateTab={setActiveTab}
+          />
+        )}
+
         {activeTab === 'dashboard' && (
           <IntuitiveDashboard 
             strategyData={strategyData}
@@ -459,6 +468,24 @@ export default function App() {
             </div>
 
             <div className="space-y-2">
+              <button
+                onClick={() => { setActiveTab('plan'); setShowMoreMenu(false); }}
+                className={`w-full p-3.5 rounded-2xl border text-left flex items-center justify-between transition ${
+                  activeTab === 'plan' ? 'bg-emerald-50 border-emerald-300 text-emerald-900' : 'bg-slate-50 hover:bg-slate-100 border-slate-200'
+                }`}
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold">
+                    <Wallet className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-bold text-slate-900">Plan Maestro 10.000 €</h4>
+                    <p className="text-[11px] text-slate-500">Distribución de tu capital inicial y colchón</p>
+                  </div>
+                </div>
+                <ChevronRight className="w-4 h-4 text-slate-400" />
+              </button>
+
               <button
                 onClick={() => { setActiveTab('simulator'); setShowMoreMenu(false); }}
                 className={`w-full p-3.5 rounded-2xl border text-left flex items-center justify-between transition ${

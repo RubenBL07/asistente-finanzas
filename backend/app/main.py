@@ -37,6 +37,10 @@ from app.services.advisor_engine import (
     get_preconfigured_consultation,
     answer_financial_query
 )
+from app.services.asset_evaluator import (
+    get_daily_verdicts_data,
+    analyze_specific_asset_query
+)
 
 app = FastAPI(
     title="Aegis Finance API",
@@ -178,6 +182,14 @@ def get_preset_detail(consult_id: str):
 @app.post("/api/chat/advisor")
 def chat_with_advisor(req: ChatRequest):
     return answer_financial_query(req.query)
+
+@app.get("/api/verdict/daily")
+def get_daily_verdicts_route():
+    return get_daily_verdicts_data()
+
+@app.get("/api/verdict/analyze")
+def analyze_asset_route(q: str):
+    return analyze_specific_asset_query(q)
 
 # Servir el frontend compilado (Single Page Application)
 import os

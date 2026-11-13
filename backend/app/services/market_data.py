@@ -20,6 +20,7 @@ ASSETS_TO_TRACK = {
     "^STOXX50E": {"name": "Euro Stoxx 50 (Europa)", "category": "Renta Variable Europea", "benchmark": "Europa"},
     "GC=F": {"name": "Oro (Activo Refugio)", "category": "Materias Primas", "benchmark": "Reserva de Valor"},
     "BTC-USD": {"name": "Bitcoin (Criptoactivo Satélite)", "category": "Digital / Crecimiento", "benchmark": "Alternativo"},
+    "NVDA": {"name": "NVIDIA Corp (IA & Hardware)", "category": "Acción Individual / Satélite", "benchmark": "Megatendencia IA"},
     "^TNX": {"name": "Rendimiento Bono EE.UU. 10A", "category": "Renta Fija / Macro", "benchmark": "Coste del Dinero"}
 }
 
@@ -113,6 +114,21 @@ FALLBACK_CACHE = {
         "sma_200": 61200.0,
         "golden_cross": True,
         "signal": "Consolidación Alcista (Asignación Satélite < 5%)",
+        "last_updated": datetime.datetime.now().strftime("%H:%M:%S")
+    },
+    "NVDA": {
+        "symbol": "NVDA",
+        "name": "NVIDIA Corp (IA & Hardware)",
+        "category": "Acción Individual / Satélite",
+        "price": 142.50,
+        "change_pct": 1.15,
+        "high_52w": 149.77,
+        "drawdown_pct": -4.85,
+        "rsi_14": 61.8,
+        "sma_50": 132.40,
+        "sma_200": 114.20,
+        "golden_cross": True,
+        "signal": "Valoración Exigente (Solo Satélite Máx 5-10% • No meter colchón)",
         "last_updated": datetime.datetime.now().strftime("%H:%M:%S")
     },
     "^TNX": {

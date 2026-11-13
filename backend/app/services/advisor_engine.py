@@ -152,10 +152,50 @@ Esta es la pregunta más importante que debes hacerte hoy, antes de que ocurra:
 - El tiempo medio de recuperación de una caída de mercado en el índice global es de entre 1 y 2 años.
 
 #### 3. Tu protocolo automático ante una caída del 20-30%
-1. **Comprobar tu colchón**: Tienes 3.000 € intactos en tu cuenta remunerada. Puedes pagar tu comida, tus gastos y tu vida sin tocar la inversión.
+1. **Comprobar tu colchón**: Tienes tu dinero intacto en tu cuenta de ahorro. Puedes pagar tu comida, tus gastos y tu vida sin tocar la inversión.
 2. **Cero ventas**: Queda terminantemente prohibido vender en pánico.
-3. **Celebrar las rebajas**: Con tus 600 € mensuales de la nómina, ese mes estarás comprando participaciones de las mejores empresas del mundo a precio de saldo.
+3. **Celebrar las rebajas**: Con tu ahorro mensual, ese mes estarás comprando participaciones de las mejores empresas del mundo a precio de saldo.
 4. **Resultado a 5 años**: Cuando el mercado se recupere (como ha hecho siempre en los últimos 200 años de capitalismo), tu cartera experimentará una subida explosiva.
+        """
+    },
+    "nvidia_y_momento_actual": {
+        "title": "¿Qué ha pasado con Nvidia y la IA? ¿Es buen momento para meter dinero?",
+        "summary": "Diagnóstico sincero sobre Nvidia, valoración de la IA y por qué ya la compras de forma inteligente.",
+        "content": """
+### Diagnóstico Sincero: ¿Deberías meter dinero en Nvidia hoy?
+
+**Respuesta directa y honesta para Rubén (20 años): NO metas tus 10.000 € del banco de golpe en Nvidia.**
+
+He aquí el análisis exhaustivo y sin filtros que ningún vendedor de cursos te va a dar:
+
+---
+
+#### 1. Qué ha pasado realmente con Nvidia
+- **El superciclo de la IA**: Con el auge de los modelos de lenguaje y la inteligencia artificial generativa, Nvidia se convirtió en el monopolio casi absoluto del hardware de computación con sus chips Hopper (H100/H200) y su nueva arquitectura Blackwell (GB200).
+- **Cifras colosales**: Los grandes de Silicon Valley (Microsoft, Meta, Google, Amazon) han destinado más de 200.000 millones de dólares en gasto de capital (Capex) comprando chips de Nvidia. Esto llevó a Nvidia a márgenes del 60-70% y a superar los 3 billones de dólares de capitalización bursátil.
+- **La situación actual**: La acción ha multiplicado su valor de forma estratosférica y el mercado ahora le exige que cada trimestre no solo bata previsiones, sino que las pulverice para justificar el precio.
+
+---
+
+#### 2. La verdad sobre la valoración: La trampa de la perfección
+- Cotiza con múltiplos exigentes (PER futuro ~35-45x). Cuando compras a estos múltiplos, estás pagando por adelantado el éxito de los próximos 5 años.
+- Si en algún momento Microsoft o Meta anuncian que reducen su ritmo de gasto en servidores de IA, o si la competencia (Google TPUs, AMD Instinct) le roba un 5% de cuota, o si TSMC tiene problemas de fabricación, **la acción puede caer un 30% a 50% en pocas semanas**.
+- Recuerda que en 2022 Nvidia cayó un **66%**. Los inversores que compraron en la cresta de la ola sufrieron 18 meses de pánico.
+
+---
+
+#### 3. El gran secreto que casi nadie te dice en España
+1. **Ya estás comprando Nvidia**: En cualquier fondo indexado como el **Vanguard Global (MSCI World)** o el **Vanguard S&P 500**, Nvidia ya es una de las 3 mayores posiciones, pesando aproximadamente entre el **4.5% y el 7%** del fondo total.
+2. **Cada mes que inviertes 250 €**, ya estás inyectando entre **15 € y 18 € directos a Nvidia**, junto con Apple, Microsoft, Amazon y Google, pero con el respaldo de 1.500 empresas más detrás.
+3. **Ventaja Fiscal Insuperable**: En España (Art. 94 IRPF), si compras el fondo indexado puedes cambiarlo de entidad o pasarlo a un fondo monetario sin pagar a Hacienda. Si compras acciones sueltas de Nvidia en un broker, cada venta te obligará a pagar entre el **19% y el 28%** en la Renta.
+
+---
+
+#### 4. Veredicto Final y Plan de Acción para Rubén
+- **De tus 10.000 € en el banco**: **0 €** a Nvidia. Esos 10.000 € son tu tranquilidad vital.
+- **De tus 500 € de ahorro mensual**:
+  - Tu aportación recomendada de 200-250 €/mes al fondo indexado ya compra Nvidia de forma matemáticamente equilibrada.
+  - Si por pasión tecnológica quieres tener más exposición directa a la IA, la regla de oro es destinar **como máximo un 5% a 10% de tu ahorro mensual (20 € a 25 €/mes)** en un fondo tecnológico o compra satélite. Nunca más de eso.
         """
     }
 }
@@ -171,7 +211,11 @@ def answer_financial_query(query: str) -> Dict[str, Any]:
     q_lower = query.lower()
     
     # Detección de intenciones y temas clave
-    if any(k in q_lower for k in ["hoy", "empezar", "10000", "10.000", "paso a paso", "distribucion", "repartir"]):
+    if any(k in q_lower for k in ["nvidia", "nvda", "ia", "inteligencia artificial", "blackwell", "chips", "hardware"]):
+        consult = PRECONFIGURED_CONSULTATIONS["nvidia_y_momento_actual"]
+        return {"response": consult["content"], "source": "Diagnóstico Sincero de Mercado & Valoración Fundamental"}
+    
+    elif any(k in q_lower for k in ["hoy", "empezar", "10000", "10.000", "paso a paso", "distribucion", "repartir"]):
         consult = PRECONFIGURED_CONSULTATIONS["paso_a_paso_hoy"]
         return {"response": consult["content"], "source": "Plan Estratégico Core-Satellite & Filosofía Boglehead"}
     

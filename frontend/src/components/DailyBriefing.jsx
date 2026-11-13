@@ -10,7 +10,8 @@ import {
   BookmarkCheck,
   Smile,
   ShieldCheck,
-  ArrowRight
+  ArrowRight,
+  Target
 } from 'lucide-react';
 
 const DEFAULT_BRIEFING = {
@@ -132,6 +133,39 @@ export default function DailyBriefing({ onNavigateTab }) {
             <RefreshCw className={`w-4 h-4 ${isRefreshing ? 'animate-spin text-emerald-700' : ''}`} />
           </button>
         </div>
+      </div>
+
+      {/* BANNER DESTACADO: VEREDICTO DE INVERSIÓN SINCERO HOY */}
+      <div className="bg-gradient-to-r from-slate-900 to-emerald-950 rounded-2xl sm:rounded-3xl p-4 sm:p-5 text-white shadow-soft flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-slate-700/60">
+        <div className="flex items-start sm:items-center gap-3.5">
+          <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-emerald-800 text-white flex items-center justify-center shrink-0 shadow-md">
+            <Target className="w-5 h-5 text-emerald-300" />
+          </div>
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="text-[10px] font-bold uppercase tracking-wider bg-emerald-500/30 text-emerald-300 px-2 py-0.5 rounded-full font-mono">
+                Veredicto del Día
+              </span>
+              <span className="text-xs text-amber-300 font-bold flex items-center gap-1">
+                • NVIDIA: 🟡 Precaución Satélite
+              </span>
+            </div>
+            <h3 className="text-sm sm:text-base font-extrabold text-white mt-1">
+              ¿Deberías meter dinero hoy en NVIDIA u otros activos?
+            </h3>
+            <p className="text-xs text-slate-300 hidden sm:block mt-0.5">
+              Análisis sincero y sin humo para tu perfil: 20 años, 10.000 € y 500 €/mes de ahorro.
+            </p>
+          </div>
+        </div>
+
+        <button
+          onClick={() => onNavigateTab && onNavigateTab('veredicto')}
+          className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl sm:rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition shadow-xs whitespace-nowrap shrink-0 self-stretch sm:self-auto cursor-pointer"
+        >
+          <span>Ver Veredicto Completo</span>
+          <ArrowRight className="w-3.5 h-3.5" />
+        </button>
       </div>
 
       {/* 2. ¿QUÉ DEBES HACER HOY? (ACCIONES CONCRETAS Y SENCILLAS) */}
